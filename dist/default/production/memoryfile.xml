@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<project>                                  
+  <executable name="dist/default/production/CPR_dum_e.X.production.elf">                 
+    <memory name="program">              
+      <units>bytes</units>                 
+      <length>4096</length>                 
+      <used>718</used>                     
+      <free>3378</free>                     
+    </memory>                              
+    <memory name="data">                 
+      <units>bytes</units>                 
+      <length>256</length>                 
+      <used>8</used>                     
+      <free>248</free>                     
+    </memory>                              
+  </executable>                            
+</project>                                 
