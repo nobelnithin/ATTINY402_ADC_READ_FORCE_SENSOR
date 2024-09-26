@@ -1,41 +1,3 @@
- /*
- * MAIN Generated Driver File
- * 
- * @file main.c
- * 
- * @defgroup main MAIN
- * 
- * @brief This is the generated driver implementation file for the MAIN driver.
- *
- * @version MAIN Driver Version 1.0.0
-*/
-
-/*
-© [2024] Microchip Technology Inc. and its subsidiaries.
-
-    Subject to your compliance with these terms, you may use Microchip 
-    software and any derivatives exclusively with Microchip products. 
-    You are responsible for complying with 3rd party license terms  
-    applicable to your use of 3rd party software (including open source  
-    software) that may accompany Microchip software. SOFTWARE IS ?AS IS.? 
-    NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS 
-    SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT,  
-    MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT 
-    WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY 
-    KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF 
-    MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE 
-    FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP?S 
-    TOTAL LIABILITY ON ALL CLAIMS RELATED TO THE SOFTWARE WILL NOT 
-    EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
-    THIS SOFTWARE.
-*/
-
-
-/*
-    Main application
-*/
-
 #include "mcc_generated_files/system/system.h"
 #include <util/delay.h>
 
@@ -44,7 +6,7 @@
 #define BUZZER_PIN 2    // PA1 for Buzzer
 #define BUZZER_HIGH 1   // PA1 to control buzzer high state
 
-#define BEEP_DURATION 50 // Define how long the buzzer will beep (adjustable)
+#define BEEP_DURATION 23 // Define how long the buzzer will beep (adjustable)
 
 // Function to initialize the ADC
 void adc_init(void) {
@@ -84,7 +46,7 @@ int main(void) {
         force = (float)adc_value;
    
         // Control the buzzer based on the force value
-        if (force > 1020.0 && !beep) {  // Force exceeds threshold and buzzer hasn't beeped
+        if (force > 1019.99 && !beep) {  // Force exceeds threshold and buzzer hasn't beeped
             beep = true;               // Start beeping
             beep_timer = 0;            // Reset beep timer
             PORTA_set_pin_level(BUZZER_PIN, true);  // Turn on Buzzer
@@ -99,7 +61,7 @@ int main(void) {
                
             }
         }
-        if(force<1000.0)
+        if(force<1010.0)
         {
             beep = false;
             PORTA_set_pin_level(BUZZER_PIN, false);
